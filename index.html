@@ -12,6 +12,20 @@
       background: url('https://images.unsplash.com/photo-1508264165352-258a6c5c7a6a?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
     }
+    nav {
+      background-color: rgba(0,0,0,0.7);
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
     header {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 2rem;
@@ -89,18 +103,24 @@
   </style>
 </head>
 <body>
+  <nav>
+    <a href="#sobremi">Sobre mí</a>
+    <a href="#motivaciones">Lo que me mueve</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
   <header>
     <h1>Flavia Sánchez</h1>
     <p>De las rutas del turismo a los caminos del emprendimiento</p>
   </header>
   <div class="content">
-    <div class="section">
+    <div class="section" id="sobremi">
       <h2>Sobre mí</h2>
       <p>
-        Nací en Perú, entre montañas, ciudades llenas de historia y sabores inolvidables. Estudié turismo, pero la vida me llevó a explorar también el mundo de los negocios. Hoy trabajo en el área de administración de una franquicia cervecera mientras sigo formándome y soñando con nuevas rutas por recorrer.
+        Nací en Perú, entre montañas, ciudades llenas de historia y sabores inolvidables. Estudié turismo, pero la vida me llevó a explorar también el mundo de los negocios. Hoy trabajo en el área de administración una franquicia cervecera mientras sigo formándome y soñando con nuevas rutas por recorrer.
       </p>
     </div>
-    <div class="section">
+    <div class="section" id="motivaciones">
       <h2>Lo que me mueve</h2>
       <ul>
         <li>🌍 La pasión por conocer culturas</li>
@@ -109,13 +129,17 @@
         <li>✈️ La libertad de moverse sin límites</li>
       </ul>
     </div>
-    <div class="section">
+    <div class="section" id="galeria">
       <h2>Galería de Aventuras</h2>
       <div class="gallery">
-        <img src="https://source.unsplash.com/400x300/?travel,mountains" alt="Aventura 1">
-        <img src="https://source.unsplash.com/400x300/?nature,hike" alt="Aventura 2">
-        <img src="https://source.unsplash.com/400x300/?ocean,explore" alt="Aventura 3">
-        <img src="https://source.unsplash.com/400x300/?culture,people" alt="Aventura 4">
+        <img src="https://i.imgur.com/9wUVkQl.jpg" alt="Aventura 1">
+        <img src="https://i.imgur.com/jpl58na.jpg" alt="Aventura 2">
+        <img src="https://i.imgur.com/NuGLfiO.jpg" alt="Aventura 3">
+        <img src="https://i.imgur.com/pH2v5lg.jpg" alt="Aventura 4">
+        <img src="https://i.imgur.com/s1DNeXP.jpg" alt="Aventura 5">
+        <img src="https://i.imgur.com/Jv9vQ2H.jpg" alt="Aventura 6">
+        <img src="https://i.imgur.com/lEKMaNj.jpg" alt="Aventura 7">
+        <img src="https://i.imgur.com/OVn5Ox4.jpg" alt="Aventura 8">
       </div>
     </div>
     <div class="section">
@@ -126,7 +150,7 @@
         <a href="#">@amigo3</a>
       </div>
     </div>
-    <div class="section">
+    <div class="section" id="contacto">
       <h2>Contacto</h2>
       <p>¿Quieres saber más o colaborar conmigo?</p>
       <a href="mailto:flavia26.fsm@gmail.com" class="button">Escribime</a>
@@ -137,3 +161,4 @@
   </div>
 </body>
 </html>
+
