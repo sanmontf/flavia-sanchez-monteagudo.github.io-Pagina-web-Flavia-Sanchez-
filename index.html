@@ -9,12 +9,36 @@
       margin: 0;
       font-family: 'Helvetica Neue', Arial, sans-serif;
       color: #2E8B57;
-      background-color: #FFFFFF;
+      background: linear-gradient(to bottom, #FFFFFF, #E8F5E9);
       line-height: 1.6;
+      min-height: 100vh;
+    }
+    .page-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .social-top {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 15px;
+    }
+    .social-top a {
+      color: #2E8B57;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .social-top a:hover {
+      transform: translateY(-3px);
     }
     nav {
       background-color: #FFFFFF;
-      padding: 1.5rem 1rem;
+      padding: 2rem 1rem 1.5rem;
       text-align: center;
       border-bottom: 1px solid #2E8B57;
     }
@@ -26,15 +50,25 @@
       font-size: 1.1rem;
       text-transform: uppercase;
       letter-spacing: 1px;
+      position: relative;
     }
-    nav a:hover {
-      text-decoration: underline;
+    nav a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #2E8B57;
+      transition: width 0.3s;
+    }
+    nav a:hover:after {
+      width: 100%;
     }
     header {
       background-color: #FFFFFF;
       padding: 3rem 2rem;
       text-align: center;
-      border-bottom: 2px solid #2E8B57;
       position: relative;
     }
     .header-content {
@@ -50,10 +84,12 @@
       padding-right: 2rem;
     }
     .profile-circle {
-      width: 150px;
-      height: 150px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       overflow: hidden;
+      border: 4px solid #2E8B57;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     .profile-circle img {
       width: 100%;
@@ -77,19 +113,27 @@
       margin: 2rem auto;
       padding: 0 1.5rem;
     }
-    .card {
-      background-color: #FFFFFF;
-      border: 2px solid #000000;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
+    .section {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e0e0e0;
     }
-    .card h2 {
+    .section h2 {
       color: #2E8B57;
-      border-bottom: 2px solid #2E8B57;
-      padding-bottom: 0.5rem;
-      margin-top: 0;
       font-size: 1.8rem;
       font-weight: 600;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    .section h2:after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background-color: #2E8B57;
     }
     .button {
       background-color: #2E8B57;
@@ -104,14 +148,18 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.3s ease;
     }
     .button:hover {
       background-color: #3CB371;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
     .social-button {
       display: inline-flex;
       align-items: center;
-      background-color: #2E8B57;
+      background-color: #000000;
       color: #FFFFFF;
       padding: 0.8rem 1.8rem;
       text-decoration: none;
@@ -120,6 +168,12 @@
       font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: 1px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    .social-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
     .social-button img {
       width: 20px;
@@ -128,22 +182,36 @@
     }
     .friends {
       margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
     .friends a {
       display: inline-block;
-      margin-right: 1.5rem;
       color: #2E8B57;
       text-decoration: none;
       font-weight: 600;
+      padding: 0.5rem 1rem;
+      border: 1px solid #2E8B57;
+      border-radius: 20px;
+      transition: all 0.3s ease;
     }
     .friends a:hover {
-      text-decoration: underline;
+      background-color: #2E8B57;
+      color: white;
     }
     .motivation-item {
       display: flex;
       align-items: center;
       margin-bottom: 1rem;
       font-size: 1.1rem;
+      padding: 0.8rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .motivation-item:hover {
+      background-color: #f5f5f5;
+      transform: translateX(5px);
     }
     .motivation-item span {
       margin-right: 0.8rem;
@@ -155,6 +223,7 @@
       padding: 1.5rem;
       background-color: #f9f9f9;
       border-left: 4px solid #2E8B57;
+      border-radius: 0 8px 8px 0;
     }
     .university-info {
       display: flex;
@@ -164,29 +233,43 @@
     }
     .university-img {
       width: 200px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     .university-img img {
       width: 100%;
       height: auto;
+      display: block;
     }
     .teachers-list {
       margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
     .teachers-list a {
       display: inline-block;
-      margin-right: 1.5rem;
-      margin-bottom: 1rem;
       color: #2E8B57;
       text-decoration: none;
       font-weight: 600;
+      padding: 0.5rem 1rem;
+      border: 1px solid #2E8B57;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    .teachers-list a:hover {
+      background-color: #2E8B57;
+      color: white;
     }
     .brand-link {
       color: #2E8B57;
       font-weight: 700;
       text-decoration: none;
+      border-bottom: 2px dotted #2E8B57;
     }
     .brand-link:hover {
-      text-decoration: underline;
+      border-bottom-style: solid;
     }
     .circle-img {
       width: 120px;
@@ -196,123 +279,143 @@
       display: inline-block;
       margin-right: 1rem;
       margin-bottom: 1rem;
+      border: 3px solid #2E8B57;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .circle-img:hover {
+      transform: scale(1.05);
     }
     .circle-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="#sobremi">Sobre mí</a>
-    <a href="#motivaciones">Lo que me mueve</a>
-    <a href="#amigos">Amigos</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-  
-  <header>
-    <div class="header-content">
-      <div class="header-text">
-        <h1>Flavia Sánchez</h1>
-        <p>De las rutas del turismo a los caminos de los negocios</p>
-      </div>
-      <div class="profile-circle">
-        <img src="https://i.imgur.com/AUztJlF.jpeg" alt="Flavia Sánchez">
-      </div>
+  <div class="page-container">
+    <div class="social-top">
+      <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
-  </header>
-  
-  <div class="container">
-    <div class="card" id="sobremi">
-      <h2>Sobre mí</h2>
-      <p>
-        Nací en Perú, entre montañas, ciudades llenas de historia y sabores inolvidables. Estudié turismo, pero la vida me llevó a explorar también el mundo de los negocios. Hoy trabajo en el área de administración de una franquicia cervecera mientras sigo formándome y soñando con nuevas rutas por recorrer.
-      </p>
-      <button class="button" onclick="toggleAdditionalInfo()">Información adicional</button>
-      <div id="additionalInfo" class="hidden-content">
-        <p>Mi familia es propietaria de una hacienda agrícola dedicada al cultivo de café y cacao de altísima calidad, complementados con plantaciones de vainilla, tabaco y una diversidad de especies endémicas de la región.</p>
-        <p>Trabajamos en estrecha colaboración con las comunidades locales, fomentando un modelo de cooperación mutua donde el conocimiento ancestral y las prácticas sostenibles se entrelazan con nuestra producción.</p>
-        <p>Bajo nuestra marca familiar, <a href="https://www.instagram.com/9km_peru?igsh=MWprbTIxYXU1NGJoMA==" class="brand-link">9Km.</a>, comercializamos estos exquisitos productos, cada uno cultivado con esmero y respeto por la tierra.</p>
-        <p>Nuestra finca se ubica a 1,500 metros sobre el nivel del mar, en un entorno privilegiado que confiere características únicas a nuestros cultivos. El café, cuidadosamente seleccionado y sometido a rigurosos controles de calidad, alcanza estándares de especialidad. El cacao, de variedad nativa y cultivado bajo principios orgánicos, al igual que el resto de nuestra producción, es un testimonio de nuestro compromiso con la excelencia y la sostenibilidad.</p>
-        
-        <div>
-          <div class="circle-img">
-            <img src="https://i.imgur.com/5tlq8Le.jpeg" alt="Producción 1">
-          </div>
-          <div class="circle-img">
-            <img src="https://i.imgur.com/FFJKQ2l.jpeg" alt="Producción 2">
-          </div>
-          <div class="circle-img">
-            <img src="https://i.imgur.com/JyOPK9U.jpeg" alt="Producción 3">
-          </div>
-          <div class="circle-img">
-            <img src="https://i.imgur.com/0yInj89.jpeg" alt="Producción 4">
-          </div>
+    
+    <nav>
+      <a href="#sobremi">Sobre mí</a>
+      <a href="#motivaciones">Lo que me mueve</a>
+      <a href="#amigos">Amigos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    
+    <header>
+      <div class="header-content">
+        <div class="header-text">
+          <h1>Flavia Sánchez</h1>
+          <p>De las rutas del turismo a los caminos de los negocios</p>
+        </div>
+        <div class="profile-circle">
+          <img src="https://i.imgur.com/AUztJlF.jpeg" alt="Flavia Sánchez">
         </div>
       </div>
-    </div>
+    </header>
     
-    <div class="card" id="motivaciones">
-      <h2>Lo que me mueve</h2>
-      <div class="motivation-item">
-        <span>🌍</span> La pasión por conocer culturas
-      </div>
-      <div class="motivation-item">
-        <span>📊</span> El deseo de mejorar procesos
-      </div>
-      <div class="motivation-item">
-        <span>🤝</span> El poder de las conexiones humanas
-      </div>
-      <div class="motivation-item">
-        <span>✈️</span> La libertad de moverse sin límites
-      </div>
-    </div>
-    
-    <div class="card" id="amigos">
-      <h2>Páginas de mis amigos</h2>
-      <div class="friends">
-        <a href="#">@amigo1</a>
-        <a href="#">@amigo2</a>
-        <a href="#">@amigo3</a>
-      </div>
-      <button class="button" onclick="toggleUniversityInfo()">Donde estudiamos</button>
-      <div id="universityInfo" class="hidden-content">
-        <p>La Universidad Católica San Pablo es una institución de educación superior privada peruana sin fines de lucro, centrada en la formación humanística y profesional, ubicada en la ciudad de Arequipa.</p>
-        <div class="university-info">
-          <div class="university-img">
-            <img src="https://i.imgur.com/2RkkzfE.jpeg" alt="Universidad Católica San Pablo">
+    <div class="container">
+      <div class="section" id="sobremi">
+        <h2>Sobre mí</h2>
+        <p>
+          Nací en Perú, entre montañas, ciudades llenas de historia y sabores inolvidables. Estudié turismo, pero la vida me llevó a explorar también el mundo de los negocios. Hoy trabajo en el área de administración de una franquicia cervecera mientras sigo formándome y soñando con nuevas rutas por recorrer.
+        </p>
+        <button class="button" onclick="toggleAdditionalInfo()">Información adicional</button>
+        <div id="additionalInfo" class="hidden-content">
+          <p>Mi familia es propietaria de una hacienda agrícola dedicada al cultivo de café y cacao de altísima calidad, complementados con plantaciones de vainilla, tabaco y una diversidad de especies endémicas de la región.</p>
+          <p>Trabajamos en estrecha colaboración con las comunidades locales, fomentando un modelo de cooperación mutua donde el conocimiento ancestral y las prácticas sostenibles se entrelazan con nuestra producción.</p>
+          <p>Bajo nuestra marca familiar, <a href="https://www.instagram.com/9km_peru?igsh=MWprbTIxYXU1NGJoMA==" class="brand-link">9Km.</a>, comercializamos estos exquisitos productos, cada uno cultivado con esmero y respeto por la tierra.</p>
+          <p>Nuestra finca se ubica a 1,500 metros sobre el nivel del mar, en un entorno privilegiado que confiere características únicas a nuestros cultivos. El café, cuidadosamente seleccionado y sometido a rigurosos controles de calidad, alcanza estándares de especialidad. El cacao, de variedad nativa y cultivado bajo principios orgánicos, al igual que el resto de nuestra producción, es un testimonio de nuestro compromiso con la excelencia y la sostenibilidad.</p>
+          
+          <div class="gallery">
+            <div class="circle-img">
+              <img src="https://i.imgur.com/5tlq8Le.jpeg" alt="Producción 1">
+            </div>
+            <div class="circle-img">
+              <img src="https://i.imgur.com/FFJKQ2l.jpeg" alt="Producción 2">
+            </div>
+            <div class="circle-img">
+              <img src="https://i.imgur.com/JyOPK9U.jpeg" alt="Producción 3">
+            </div>
+            <div class="circle-img">
+              <img src="https://i.imgur.com/0yInj89.jpeg" alt="Producción 4">
+            </div>
           </div>
         </div>
       </div>
       
-      <h3 style="margin-top: 2rem;">Nuestros profesores</h3>
-      <div class="teachers-list">
-        <a href="#">Profesor 1</a>
-        <a href="#">Profesor 2</a>
-        <a href="#">Profesor 3</a>
-        <a href="#">Profesor 4</a>
+      <div class="section" id="motivaciones">
+        <h2>Lo que me mueve</h2>
+        <div class="motivation-item">
+          <span>🌍</span> La pasión por conocer culturas
+        </div>
+        <div class="motivation-item">
+          <span>📊</span> El deseo de mejorar procesos
+        </div>
+        <div class="motivation-item">
+          <span>🤝</span> El poder de las conexiones humanas
+        </div>
+        <div class="motivation-item">
+          <span>✈️</span> La libertad de moverse sin límites
+        </div>
       </div>
-    </div>
-    
-    <div class="card" id="contacto">
-      <h2>Contacto</h2>
-      <p>¿Quieres saber más o colaborar conmigo?</p>
-      <a href="mailto:flavia26.fsm@gmail.com" class="button">Escríbeme</a>
-      <a href="https://www.linkedin.com/feed/" class="social-button">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-        LinkedIn
-      </a>
-      <div style="margin-top: 1.5rem;">
-        <a href="https://wa.me/51987654321" class="button" style="background-color: #25D366;">WhatsApp</a>
-        <a href="https://www.instagram.com/tu_usuario" class="social-button" style="background-color: #E1306C; margin-left: 1rem;">
+      
+      <div class="section" id="amigos">
+        <h2>Páginas de mis amigos</h2>
+        <div class="friends">
+          <a href="#">@amigo1</a>
+          <a href="#">@amigo2</a>
+          <a href="#">@amigo3</a>
+        </div>
+        <button class="button" onclick="toggleUniversityInfo()">Donde estudiamos</button>
+        <div id="universityInfo" class="hidden-content">
+          <p>La Universidad Católica San Pablo es una institución de educación superior privada peruana sin fines de lucro, centrada en la formación humanística y profesional, ubicada en la ciudad de Arequipa.</p>
+          <div class="university-info">
+            <div class="university-img">
+              <img src="https://i.imgur.com/2RkkzfE.jpeg" alt="Universidad Católica San Pablo">
+            </div>
+          </div>
+        </div>
+        
+        <h3 style="margin-top: 2rem;">Nuestros profesores</h3>
+        <div class="teachers-list">
+          <a href="#">Profesor 1</a>
+          <a href="#">Profesor 2</a>
+          <a href="#">Profesor 3</a>
+          <a href="#">Profesor 4</a>
+        </div>
+      </div>
+      
+      <div class="section" id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Quieres saber más o colaborar conmigo?</p>
+        <a href="mailto:flavia26.fsm@gmail.com" class="button">Escríbeme</a>
+        <a href="https://www.linkedin.com/feed/" class="social-button">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+          LinkedIn
+        </a>
+        <a href="https://www.instagram.com/tu_usuario" class="social-button" style="margin-left: 1rem;">
           <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
           Instagram
         </a>
       </div>
     </div>
   </div>
+
+  <!-- Font Awesome for social icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <script>
     function toggleAdditionalInfo() {
