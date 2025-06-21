@@ -8,8 +8,8 @@
     body {
       margin: 0;
       font-family: 'Helvetica Neue', Arial, sans-serif;
-      color: #2E8B57; /* Verde similar al de la imagen */
-      background-color: #FFFFFF; /* Fondo blanco */
+      color: #2E8B57;
+      background-color: #FFFFFF;
       line-height: 1.6;
     }
     nav {
@@ -35,6 +35,31 @@
       padding: 3rem 2rem;
       text-align: center;
       border-bottom: 2px solid #2E8B57;
+      position: relative;
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .header-text {
+      flex: 1;
+      text-align: left;
+      padding-right: 2rem;
+    }
+    .profile-circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #2E8B57;
+    }
+    .profile-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     header h1 {
       font-size: 2.8rem;
@@ -55,11 +80,10 @@
     }
     .card {
       background-color: #FFFFFF;
-      border: 2px solid #000000; /* Borde negro */
-      border-radius: 0; /* Sin bordes redondeados */
+      border: 2px solid #000000;
+      border-radius: 0;
       padding: 2rem;
       margin-bottom: 2.5rem;
-      box-shadow: none;
     }
     .card h2 {
       color: #2E8B57;
@@ -74,7 +98,7 @@
       color: #FFFFFF;
       padding: 0.8rem 1.8rem;
       border: none;
-      border-radius: 0; /* Sin bordes redondeados */
+      border-radius: 0;
       text-decoration: none;
       font-weight: 600;
       display: inline-block;
@@ -82,6 +106,7 @@
       font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: 1px;
+      cursor: pointer;
     }
     .button:hover {
       background-color: #3CB371;
@@ -115,7 +140,26 @@
       width: 100%;
       height: 160px;
       object-fit: cover;
-      border: 2px solid #000000; /* Borde negro para imágenes */
+      border: 2px solid #000000;
+    }
+    .circle-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .circle-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #2E8B57;
+    }
+    .circle-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .friends {
       margin-top: 1.5rem;
@@ -140,6 +184,46 @@
       margin-right: 0.8rem;
       font-size: 1.4rem;
     }
+    .hidden-content {
+      display: none;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background-color: #f9f9f9;
+      border-left: 4px solid #2E8B57;
+    }
+    .university-info {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .university-img {
+      width: 200px;
+      border: 2px solid #000;
+    }
+    .university-img img {
+      width: 100%;
+      height: auto;
+    }
+    .teachers-list {
+      margin-top: 1.5rem;
+    }
+    .teachers-list a {
+      display: inline-block;
+      margin-right: 1.5rem;
+      margin-bottom: 1rem;
+      color: #2E8B57;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .brand-link {
+      color: #2E8B57;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .brand-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -147,12 +231,20 @@
     <a href="#sobremi">Sobre mí</a>
     <a href="#motivaciones">Lo que me mueve</a>
     <a href="#galeria">Galería</a>
+    <a href="#amigos">Amigos</a>
     <a href="#contacto">Contacto</a>
   </nav>
   
   <header>
-    <h1>Flavia Sánchez</h1>
-    <p>De las rutas del turismo a los caminos de los negocios</p>
+    <div class="header-content">
+      <div class="header-text">
+        <h1>Flavia Sánchez</h1>
+        <p>De las rutas del turismo a los caminos de los negocios</p>
+      </div>
+      <div class="profile-circle">
+        <img src="https://i.imgur.com/AUztJlF.jpeg" alt="Flavia Sánchez">
+      </div>
+    </div>
   </header>
   
   <div class="container">
@@ -161,6 +253,28 @@
       <p>
         Nací en Perú, entre montañas, ciudades llenas de historia y sabores inolvidables. Estudié turismo, pero la vida me llevó a explorar también el mundo de los negocios. Hoy trabajo en el área de administración de una franquicia cervecera mientras sigo formándome y soñando con nuevas rutas por recorrer.
       </p>
+      <button class="button" onclick="toggleAdditionalInfo()">Información adicional</button>
+      <div id="additionalInfo" class="hidden-content">
+        <p>Mi familia es propietaria de una hacienda agrícola dedicada al cultivo de café y cacao de altísima calidad, complementados con plantaciones de vainilla, tabaco y una diversidad de especies endémicas de la región.</p>
+        <p>Trabajamos en estrecha colaboración con las comunidades locales, fomentando un modelo de cooperación mutua donde el conocimiento ancestral y las prácticas sostenibles se entrelazan con nuestra producción.</p>
+        <p>Bajo nuestra marca familiar, <a href="https://www.instagram.com/9km_peru?igsh=MWprbTIxYXU1NGJoMA==" class="brand-link">9Km.</a>, comercializamos estos exquisitos productos, cada uno cultivado con esmero y respeto por la tierra.</p>
+        <p>Nuestra finca se ubica a 1,500 metros sobre el nivel del mar, en un entorno privilegiado que confiere características únicas a nuestros cultivos. El café, cuidadosamente seleccionado y sometido a rigurosos controles de calidad, alcanza estándares de especialidad. El cacao, de variedad nativa y cultivado bajo principios orgánicos, al igual que el resto de nuestra producción, es un testimonio de nuestro compromiso con la excelencia y la sostenibilidad.</p>
+        
+        <div class="circle-gallery">
+          <div class="circle-img">
+            <img src="https://i.imgur.com/5tlq8Le.jpeg" alt="Producción 1">
+          </div>
+          <div class="circle-img">
+            <img src="https://i.imgur.com/FFJKQ2l.jpeg" alt="Producción 2">
+          </div>
+          <div class="circle-img">
+            <img src="https://i.imgur.com/JyOPK9U.jpeg" alt="Producción 3">
+          </div>
+          <div class="circle-img">
+            <img src="https://i.imgur.com/0yInj89.jpeg" alt="Producción 4">
+          </div>
+        </div>
+      </div>
     </div>
     
     <div class="card" id="motivaciones">
@@ -189,12 +303,29 @@
       </div>
     </div>
     
-    <div class="card">
-      <h2>Enlaces de amigos</h2>
+    <div class="card" id="amigos">
+      <h2>Páginas de mis amigos</h2>
       <div class="friends">
         <a href="#">@amigo1</a>
         <a href="#">@amigo2</a>
         <a href="#">@amigo3</a>
+      </div>
+      <button class="button" onclick="toggleUniversityInfo()">Donde estudiamos</button>
+      <div id="universityInfo" class="hidden-content">
+        <p>La Universidad Católica San Pablo es una institución de educación superior privada peruana sin fines de lucro, centrada en la formación humanística y profesional, ubicada en la ciudad de Arequipa.</p>
+        <div class="university-info">
+          <div class="university-img">
+            <img src="https://i.imgur.com/2RkkzfE.jpeg" alt="Universidad Católica San Pablo">
+          </div>
+        </div>
+      </div>
+      
+      <h3 style="margin-top: 2rem;">Nuestros profesores</h3>
+      <div class="teachers-list">
+        <a href="#">Profesor 1</a>
+        <a href="#">Profesor 2</a>
+        <a href="#">Profesor 3</a>
+        <a href="#">Profesor 4</a>
       </div>
     </div>
     
@@ -206,7 +337,26 @@
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
         LinkedIn
       </a>
+      <div style="margin-top: 1.5rem;">
+        <a href="https://wa.me/51987654321" class="button" style="background-color: #25D366;">WhatsApp</a>
+        <a href="https://www.instagram.com/tu_usuario" class="social-button" style="background-color: #E1306C; margin-left: 1rem;">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+          Instagram
+        </a>
+      </div>
     </div>
   </div>
+
+  <script>
+    function toggleAdditionalInfo() {
+      const info = document.getElementById('additionalInfo');
+      info.style.display = info.style.display === 'block' ? 'none' : 'block';
+    }
+    
+    function toggleUniversityInfo() {
+      const info = document.getElementById('universityInfo');
+      info.style.display = info.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
