@@ -8,27 +8,29 @@
     body {
       margin: 0;
       font-family: 'Helvetica Neue', sans-serif;
-      color: #fff;
-      background: url('https://i.imgur.com/zyUxS3n.jpeg') no-repeat center center fixed;
-      background-size: cover;
+      color: #333;
+      background-color: #f5f5f5;
     }
     nav {
-      background-color: rgba(0,0,0,0.7);
+      background-color: #fff;
       padding: 1rem;
       text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     nav a {
-      color: white;
+      color: #333;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
     }
     nav a:hover {
-      text-decoration: underline;
+      color: #e63946;
     }
     header {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.imgur.com/zyUxS3n.jpeg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 4rem 2rem;
       text-align: center;
     }
     header h1 {
@@ -36,60 +38,72 @@
       margin-bottom: 0.5rem;
     }
     header p {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       margin-top: 0;
     }
-    .content {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 2rem;
-      max-width: 900px;
+    .container {
+      max-width: 1200px;
       margin: 2rem auto;
-      border-radius: 12px;
+      padding: 0 1rem;
     }
-    .section {
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 2rem;
       margin-bottom: 2rem;
     }
-    .section h2 {
-      border-bottom: 2px solid #fff;
+    .card h2 {
+      color: #e63946;
+      border-bottom: 2px solid #e63946;
       padding-bottom: 0.5rem;
+      margin-top: 0;
     }
     .button {
       background-color: #e63946;
       color: #fff;
-      padding: 0.7rem 1.5rem;
+      padding: 0.8rem 1.5rem;
       border: none;
-      border-radius: 8px;
+      border-radius: 4px;
       text-decoration: none;
       font-weight: bold;
+      display: inline-block;
+      margin-top: 1rem;
     }
     .button:hover {
       background-color: #d62828;
     }
-    .icon-button {
+    .social-button {
       display: inline-flex;
       align-items: center;
-      background-color: #0e76a8;
+      background-color: #0077b5;
       color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
       text-decoration: none;
       font-weight: bold;
+      margin-left: 1rem;
     }
-    .icon-button img {
+    .social-button img {
       width: 20px;
       height: 20px;
       margin-right: 0.5rem;
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1rem;
+      margin-top: 1rem;
     }
     .gallery img {
       width: 100%;
-      height: 150px;
+      height: 180px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 4px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.03);
     }
     .friends {
       margin-top: 1rem;
@@ -97,8 +111,17 @@
     .friends a {
       display: inline-block;
       margin-right: 1rem;
-      color: #61dafb;
+      color: #0077b5;
       text-decoration: none;
+    }
+    .motivation-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+    .motivation-item span {
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
     }
   </style>
 </head>
@@ -109,27 +132,37 @@
     <a href="#galeria">Galería</a>
     <a href="#contacto">Contacto</a>
   </nav>
+  
   <header>
     <h1>Flavia Sánchez</h1>
     <p>De las rutas del turismo a los caminos de los negocios</p>
   </header>
-  <div class="content">
-    <div class="section" id="sobremi">
+  
+  <div class="container">
+    <div class="card" id="sobremi">
       <h2>Sobre mí</h2>
       <p>
-        Nací en Perú, entre montañas, ciudades llenas de historia y sabores inolvidables. Estudié turismo, pero la vida me llevó a explorar también el mundo de los negocios. Hoy trabajo en el área de adminitración de una franquicia cervecera mientras sigo formándome y soñando con nuevas rutas por recorrer.
+        Nací en Perú, entre montañas, ciudades llenas de historia y sabores inolvidables. Estudié turismo, pero la vida me llevó a explorar también el mundo de los negocios. Hoy trabajo en el área de administración de una franquicia cervecera mientras sigo formándome y soñando con nuevas rutas por recorrer.
       </p>
     </div>
-    <div class="section" id="motivaciones">
+    
+    <div class="card" id="motivaciones">
       <h2>Lo que me mueve</h2>
-      <ul>
-        <li>🌍 La pasión por conocer culturas</li>
-        <li>📊 El deseo de mejorar procesos</li>
-        <li>🤝 El poder de las conexiones humanas</li>
-        <li>✈️ La libertad de moverse sin límites</li>
-      </ul>
+      <div class="motivation-item">
+        <span>🌍</span> La pasión por conocer culturas
+      </div>
+      <div class="motivation-item">
+        <span>📊</span> El deseo de mejorar procesos
+      </div>
+      <div class="motivation-item">
+        <span>🤝</span> El poder de las conexiones humanas
+      </div>
+      <div class="motivation-item">
+        <span>✈️</span> La libertad de moverse sin límites
+      </div>
     </div>
-    <div class="section" id="galeria">
+    
+    <div class="card" id="galeria">
       <h2>Galería de Aventuras</h2>
       <div class="gallery">
         <img src="https://i.imgur.com/5tlq8Le.jpeg" alt="Aventura 1">
@@ -138,7 +171,8 @@
         <img src="https://i.imgur.com/0yInj89.jpeg" alt="Aventura 4">
       </div>
     </div>
-    <div class="section">
+    
+    <div class="card">
       <h2>Enlaces de amigos</h2>
       <div class="friends">
         <a href="#">@amigo1</a>
@@ -146,12 +180,14 @@
         <a href="#">@amigo3</a>
       </div>
     </div>
-    <div class="section" id="contacto">
+    
+    <div class="card" id="contacto">
       <h2>Contacto</h2>
       <p>¿Quieres saber más o colaborar conmigo?</p>
       <a href="mailto:flavia26.fsm@gmail.com" class="button">Escríbeme</a>
-      <a href="https://www.linkedin.com/feed/" class="icon-button" style="margin-left: 1rem;">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">LinkedIn
+      <a href="https://www.linkedin.com/feed/" class="social-button">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+        LinkedIn
       </a>
     </div>
   </div>
