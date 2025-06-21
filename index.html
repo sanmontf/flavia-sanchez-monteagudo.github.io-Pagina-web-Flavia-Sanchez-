@@ -16,6 +16,7 @@
       position: relative;
       line-height: 1.6;
       min-height: 100vh;
+      text-align: justify;
     }
     body::before {
       content: '';
@@ -24,7 +25,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(0, 0, 0, 0.5);
       z-index: -1;
     }
     .page-container {
@@ -47,7 +48,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.4);
     }
     .social-top {
       position: absolute;
@@ -119,7 +120,6 @@
     }
     .header-text {
       flex: 1;
-      text-align: left;
       padding-right: 3rem;
     }
     .name-container {
@@ -131,9 +131,9 @@
     header h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
-      color: white;
+      color: #2E8B57;
       font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     }
     .location {
       position: absolute;
@@ -141,7 +141,7 @@
       right: 220px;
       color: white;
       font-weight: 600;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
       z-index: 2;
     }
     header p {
@@ -149,7 +149,6 @@
       margin-top: 0;
       color: #2E8B57;
       font-weight: 400;
-      text-align: justify;
     }
     .profile-container {
       position: relative;
@@ -358,13 +357,19 @@
       gap: 1rem;
       margin-top: 1.5rem;
     }
+    .section-title {
+      font-size: 1.8rem;
+      color: #2E8B57;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 <body>
   <div class="page-container">
     <div class="header-banner">
       <div class="name-container">
-        <h1>Flavia Sánchez</h1>
+        <h1>Flavia Sánchez Monteagudo</h1>
       </div>
       <div class="location">Arequipa, Perú</div>
       <div class="social-top">
@@ -388,9 +393,11 @@
       <header>
         <div class="header-content">
           <div class="header-text">
+            <div class="section-title">Sobre mí</div>
             <p>
               Nací en Perú, entre montañas, ciudades llenas de historia y sabores inolvidables. Estudié turismo, pero la vida me llevó a explorar también el mundo de los negocios. Hoy trabajo en el área de administración de una franquicia cervecera mientras sigo formándome y soñando con nuevas rutas por recorrer.
             </p>
+            <button class="button" onclick="toggleAdditionalInfo()">Información adicional</button>
           </div>
           <div class="profile-container">
             <div class="profile-circle">
@@ -401,8 +408,6 @@
       </header>
       
       <div class="section" id="sobremi">
-        <h2>Sobre mí</h2>
-        <button class="button" onclick="toggleAdditionalInfo()">Información adicional</button>
         <div id="additionalInfo" class="hidden-content">
           <p>Mi familia es propietaria de una hacienda agrícola dedicada al cultivo de café y cacao de altísima calidad, complementados con plantaciones de vainilla, tabaco y una diversidad de especies endémicas de la región.</p>
           <p>Trabajamos en estrecha colaboración con las comunidades locales, fomentando un modelo de cooperación mutua donde el conocimiento ancestral y las prácticas sostenibles se entrelazan con nuestra producción.</p>
@@ -475,10 +480,6 @@
         <a href="https://www.linkedin.com/feed/" class="social-button">
           <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
           LinkedIn
-        </a>
-        <a href="https://www.instagram.com/tu_usuario" class="social-button" style="margin-left: 1rem;">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-          Instagram
         </a>
       </div>
     </div>
