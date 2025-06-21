@@ -124,28 +124,30 @@
     }
     .name-container {
       position: absolute;
-      top: -100px;
-      left: 50px;
+      top: -50px;
+      left: 0;
+      right: 0;
+      text-align: center;
       z-index: 2;
     }
     header h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
-      color: #2E8B57;
+      color: white;
       font-weight: 700;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     }
     .location {
       position: absolute;
-      top: -40px;
-      right: 220px;
+      bottom: 20px;
+      right: 20px;
       color: white;
       font-weight: 600;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
       z-index: 2;
     }
     header p {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       margin-top: 0;
       color: #2E8B57;
       font-weight: 400;
@@ -160,6 +162,7 @@
       border-radius: 50%;
       overflow: hidden;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      position: relative;
     }
     .profile-circle img {
       width: 100%;
@@ -288,12 +291,13 @@
     }
     .university-info {
       display: flex;
+      flex-direction: column;
       align-items: center;
       gap: 2rem;
       margin-top: 1.5rem;
     }
     .university-img {
-      width: 200px;
+      width: 300px;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -356,12 +360,28 @@
       flex-wrap: wrap;
       gap: 1rem;
       margin-top: 1.5rem;
+      justify-content: center;
     }
     .section-title {
       font-size: 1.8rem;
       color: #2E8B57;
       font-weight: 700;
       margin-bottom: 1rem;
+    }
+    .university-link {
+      color: #2E8B57;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .university-link:hover {
+      text-decoration: underline;
+    }
+    .location-link {
+      color: #2E8B57;
+      text-decoration: none;
+    }
+    .location-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -371,7 +391,6 @@
       <div class="name-container">
         <h1>Flavia Sánchez Monteagudo</h1>
       </div>
-      <div class="location">Arequipa, Perú</div>
       <div class="social-top">
         <a href="https://www.linkedin.com" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
@@ -395,13 +414,16 @@
           <div class="header-text">
             <div class="section-title">Sobre mí</div>
             <p>
-              Nací en Perú, entre montañas, ciudades llenas de historia y sabores inolvidables. Estudié turismo, pero la vida me llevó a explorar también el mundo de los negocios. Hoy trabajo en el área de administración de una franquicia cervecera mientras sigo formándome y soñando con nuevas rutas por recorrer.
+              Nací en Perú, entre montañas y ciudades llenas de historia. Estudié turismo y exploré el mundo de los negocios. Hoy trabajo en administración de una franquicia cervecera mientras sigo formándome y soñando con nuevas rutas por recorrer.
             </p>
             <button class="button" onclick="toggleAdditionalInfo()">Información adicional</button>
           </div>
           <div class="profile-container">
             <div class="profile-circle">
               <img src="https://i.imgur.com/AUztJlF.jpeg" alt="Flavia Sánchez">
+              <div class="location">
+                Arequipa, Perú
+              </div>
             </div>
           </div>
         </div>
@@ -412,7 +434,6 @@
           <p>Mi familia es propietaria de una hacienda agrícola dedicada al cultivo de café y cacao de altísima calidad, complementados con plantaciones de vainilla, tabaco y una diversidad de especies endémicas de la región.</p>
           <p>Trabajamos en estrecha colaboración con las comunidades locales, fomentando un modelo de cooperación mutua donde el conocimiento ancestral y las prácticas sostenibles se entrelazan con nuestra producción.</p>
           <p>Bajo nuestra marca familiar, <a href="https://www.instagram.com/9km_peru?igsh=MWprbTIxYXU1NGJoMA==" class="brand-link">9Km.</a>, comercializamos estos exquisitos productos, cada uno cultivado con esmero y respeto por la tierra.</p>
-          <p>Nuestra finca se ubica a 1,500 metros sobre el nivel del mar, en un entorno privilegiado que confiere características únicas a nuestros cultivos. El café, cuidadosamente seleccionado y sometido a rigurosos controles de calidad, alcanza estándares de especialidad. El cacao, de variedad nativa y cultivado bajo principios orgánicos, al igual que el resto de nuestra producción, es un testimonio de nuestro compromiso con la excelencia y la sostenibilidad.</p>
           
           <div class="gallery">
             <div class="circle-img">
@@ -456,7 +477,7 @@
         </div>
         <button class="button" onclick="toggleUniversityInfo()">Donde estudiamos</button>
         <div id="universityInfo" class="hidden-content">
-          <p>La Universidad Católica San Pablo es una institución de educación superior privada peruana sin fines de lucro, centrada en la formación humanística y profesional, ubicada en la ciudad de Arequipa.</p>
+          <p>La <a href="https://ucsp.edu.pe" class="university-link" target="_blank">Universidad Católica San Pablo</a> es una institución de educación superior privada peruana sin fines de lucro, centrada en la formación humanística y profesional, ubicada en la ciudad de <a href="https://www.google.com/maps/place/Universidad+Católica+San+Pablo/@-16.3900752,-71.5380388,17z/data=!3m1!4b1!4m6!3m5!1s0x91424b5b88cb870f:0x9affe1605543194!8m2!3d-16.3900752!4d-71.5354639!16s%2Fg%2F1229bylm?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D" class="location-link" target="_blank">Arequipa</a>.</p>
           <div class="university-info">
             <div class="university-img">
               <img src="https://i.imgur.com/2RkkzfE.jpeg" alt="Universidad Católica San Pablo">
