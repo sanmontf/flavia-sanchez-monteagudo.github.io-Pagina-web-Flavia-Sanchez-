@@ -54,7 +54,6 @@
       height: 150px;
       border-radius: 50%;
       overflow: hidden;
-      border: 3px solid #2E8B57;
     }
     .profile-circle img {
       width: 100%;
@@ -81,7 +80,6 @@
     .card {
       background-color: #FFFFFF;
       border: 2px solid #000000;
-      border-radius: 0;
       padding: 2rem;
       margin-bottom: 2.5rem;
     }
@@ -98,7 +96,6 @@
       color: #FFFFFF;
       padding: 0.8rem 1.8rem;
       border: none;
-      border-radius: 0;
       text-decoration: none;
       font-weight: 600;
       display: inline-block;
@@ -117,7 +114,6 @@
       background-color: #2E8B57;
       color: #FFFFFF;
       padding: 0.8rem 1.8rem;
-      border-radius: 0;
       text-decoration: none;
       font-weight: 600;
       margin-left: 1rem;
@@ -129,37 +125,6 @@
       width: 20px;
       height: 20px;
       margin-right: 0.8rem;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1.5rem;
-    }
-    .gallery img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border: 2px solid #000000;
-    }
-    .circle-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-top: 1.5rem;
-    }
-    .circle-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid #2E8B57;
-    }
-    .circle-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
     .friends {
       margin-top: 1.5rem;
@@ -199,7 +164,6 @@
     }
     .university-img {
       width: 200px;
-      border: 2px solid #000;
     }
     .university-img img {
       width: 100%;
@@ -224,13 +188,26 @@
     .brand-link:hover {
       text-decoration: underline;
     }
+    .circle-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: inline-block;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+    .circle-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
   <nav>
     <a href="#sobremi">Sobre mí</a>
     <a href="#motivaciones">Lo que me mueve</a>
-    <a href="#galeria">Galería</a>
     <a href="#amigos">Amigos</a>
     <a href="#contacto">Contacto</a>
   </nav>
@@ -248,115 +225,4 @@
   </header>
   
   <div class="container">
-    <div class="card" id="sobremi">
-      <h2>Sobre mí</h2>
-      <p>
-        Nací en Perú, entre montañas, ciudades llenas de historia y sabores inolvidables. Estudié turismo, pero la vida me llevó a explorar también el mundo de los negocios. Hoy trabajo en el área de administración de una franquicia cervecera mientras sigo formándome y soñando con nuevas rutas por recorrer.
-      </p>
-      <button class="button" onclick="toggleAdditionalInfo()">Información adicional</button>
-      <div id="additionalInfo" class="hidden-content">
-        <p>Mi familia es propietaria de una hacienda agrícola dedicada al cultivo de café y cacao de altísima calidad, complementados con plantaciones de vainilla, tabaco y una diversidad de especies endémicas de la región.</p>
-        <p>Trabajamos en estrecha colaboración con las comunidades locales, fomentando un modelo de cooperación mutua donde el conocimiento ancestral y las prácticas sostenibles se entrelazan con nuestra producción.</p>
-        <p>Bajo nuestra marca familiar, <a href="https://www.instagram.com/9km_peru?igsh=MWprbTIxYXU1NGJoMA==" class="brand-link">9Km.</a>, comercializamos estos exquisitos productos, cada uno cultivado con esmero y respeto por la tierra.</p>
-        <p>Nuestra finca se ubica a 1,500 metros sobre el nivel del mar, en un entorno privilegiado que confiere características únicas a nuestros cultivos. El café, cuidadosamente seleccionado y sometido a rigurosos controles de calidad, alcanza estándares de especialidad. El cacao, de variedad nativa y cultivado bajo principios orgánicos, al igual que el resto de nuestra producción, es un testimonio de nuestro compromiso con la excelencia y la sostenibilidad.</p>
-        
-        <div class="circle-gallery">
-          <div class="circle-img">
-            <img src="https://i.imgur.com/5tlq8Le.jpeg" alt="Producción 1">
-          </div>
-          <div class="circle-img">
-            <img src="https://i.imgur.com/FFJKQ2l.jpeg" alt="Producción 2">
-          </div>
-          <div class="circle-img">
-            <img src="https://i.imgur.com/JyOPK9U.jpeg" alt="Producción 3">
-          </div>
-          <div class="circle-img">
-            <img src="https://i.imgur.com/0yInj89.jpeg" alt="Producción 4">
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="card" id="motivaciones">
-      <h2>Lo que me mueve</h2>
-      <div class="motivation-item">
-        <span>🌍</span> La pasión por conocer culturas
-      </div>
-      <div class="motivation-item">
-        <span>📊</span> El deseo de mejorar procesos
-      </div>
-      <div class="motivation-item">
-        <span>🤝</span> El poder de las conexiones humanas
-      </div>
-      <div class="motivation-item">
-        <span>✈️</span> La libertad de moverse sin límites
-      </div>
-    </div>
-    
-    <div class="card" id="galeria">
-      <h2>Galería de Aventuras</h2>
-      <div class="gallery">
-        <img src="https://i.imgur.com/5tlq8Le.jpeg" alt="Aventura 1">
-        <img src="https://i.imgur.com/FFJKQ2l.jpeg" alt="Aventura 2">
-        <img src="https://i.imgur.com/JyOPK9U.jpeg" alt="Aventura 3">
-        <img src="https://i.imgur.com/0yInj89.jpeg" alt="Aventura 4">
-      </div>
-    </div>
-    
-    <div class="card" id="amigos">
-      <h2>Páginas de mis amigos</h2>
-      <div class="friends">
-        <a href="#">@amigo1</a>
-        <a href="#">@amigo2</a>
-        <a href="#">@amigo3</a>
-      </div>
-      <button class="button" onclick="toggleUniversityInfo()">Donde estudiamos</button>
-      <div id="universityInfo" class="hidden-content">
-        <p>La Universidad Católica San Pablo es una institución de educación superior privada peruana sin fines de lucro, centrada en la formación humanística y profesional, ubicada en la ciudad de Arequipa.</p>
-        <div class="university-info">
-          <div class="university-img">
-            <img src="https://i.imgur.com/2RkkzfE.jpeg" alt="Universidad Católica San Pablo">
-          </div>
-        </div>
-      </div>
-      
-      <h3 style="margin-top: 2rem;">Nuestros profesores</h3>
-      <div class="teachers-list">
-        <a href="#">Profesor 1</a>
-        <a href="#">Profesor 2</a>
-        <a href="#">Profesor 3</a>
-        <a href="#">Profesor 4</a>
-      </div>
-    </div>
-    
-    <div class="card" id="contacto">
-      <h2>Contacto</h2>
-      <p>¿Quieres saber más o colaborar conmigo?</p>
-      <a href="mailto:flavia26.fsm@gmail.com" class="button">Escríbeme</a>
-      <a href="https://www.linkedin.com/feed/" class="social-button">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-        LinkedIn
-      </a>
-      <div style="margin-top: 1.5rem;">
-        <a href="https://wa.me/51987654321" class="button" style="background-color: #25D366;">WhatsApp</a>
-        <a href="https://www.instagram.com/tu_usuario" class="social-button" style="background-color: #E1306C; margin-left: 1rem;">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-          Instagram
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function toggleAdditionalInfo() {
-      const info = document.getElementById('additionalInfo');
-      info.style.display = info.style.display === 'block' ? 'none' : 'block';
-    }
-    
-    function toggleUniversityInfo() {
-      const info = document.getElementById('universityInfo');
-      info.style.display = info.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
-</body>
-</html>
+    <div class
